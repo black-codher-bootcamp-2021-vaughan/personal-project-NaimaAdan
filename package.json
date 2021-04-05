@@ -1,0 +1,50 @@
+{
+  "name": "Visualiser",
+  "version": "1.0.1",
+  "description": "Visualisations using JSAV",
+  "license": "MIT",
+  "author": "mohams17@aston.ac.uk",
+  "contributors": [
+    {
+      "name": "Suaad Mohamed"
+    }
+  ],
+  "directories": {
+    "example": "Example usages of JSAV",
+    "test": "Unittests",
+    "src": "The JS sourcefiles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suaadMohamed/jsav2.git"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+<<<<<<< HEAD
+=======
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-qunit": "^2.0.0",
+    "grunt-contrib-uglify": "^3.2.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-gitinfo": "^0.1.8",
+    "load-grunt-tasks": "^3.5.2"
+>>>>>>> 651e427... Unit tests (#4)
+  }
+}
