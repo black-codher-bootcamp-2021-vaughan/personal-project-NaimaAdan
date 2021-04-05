@@ -91,7 +91,6 @@
            
             jsavArray.hide()
             return jsav.ds.array(newArr, {indexed: true})
-
         }
 
         function run() {
@@ -111,12 +110,8 @@
                   poppedElement.addEventListener("click", function() {
                       var input = document.getElementById("userInput")
                       var valueToRemove = input.value
-                      jsavArr = poppedArray(jsav, jsavArr, valueToRemove) 
-
-                  
+                      jsavArr = poppedArray(jsav, jsavArr, valueToRemove)   
               })
-    
-
       }
 
         run()
