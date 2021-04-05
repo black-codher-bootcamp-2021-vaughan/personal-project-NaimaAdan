@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>queue</title>
+    <link rel="stylesheet" href="./css/JSAV.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+   <style>
+    #container {
+      width: 98%;
+      position: relative;
+
+    }
+    .jsavcounter {
+      position: absolute;
+      top: 15px;
+    }
+    .jsavcanvas { height: 500px;}
+    .mypointer {
+      text-decoration: underline;
+    }
+    .mypointer .jsavpointerarea {
+      border-color: blue;
+      background-color: red;
+    }
+    </style>
+  </head>
+  <body>
+<!--navigation-->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">visualiser</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+
+        <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              data structures
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="stack.html">stack</a></li>
+              <li><a class="dropdown-item" href="queue.html">queue</a></li>
+              <li><a class="dropdown-item" href="binarytree.html">binary tree</a></li>
+
+            </ul>
+         <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            sorting algorithms
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="bubblesort.html">bubble sort</a></li>
+                  <li><a class="dropdown-item" href="insertionsort.html">insertion sort</a></li>
+                  <li><a class="dropdown-item" href="mergesort.html">merge sort</a></li>
+                </ul>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="container">
+    <p class="jsavoutput jsavline"></p>
+    <div class="jsavcanvas">
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+    </div>
+    <div class="input-group input-group-sm  w-50">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Input</span>
+        </div>
+        <input id="userInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <div class="divider">
+            <button id="enqueue" type="button" class="btn btn-success"> enqueue </button>
+            <button id="dequeue" type="button" class="btn btn-warning"> dequeue  </button>
+        </div>
+    </div>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="./lib/jquery.transit.js"></script>
+    <script src="./lib/raphael.js"></script>
+    <script src="./lib/JSAV.js"></script>
+    <script src="./src/queue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  </body>
+</html>
