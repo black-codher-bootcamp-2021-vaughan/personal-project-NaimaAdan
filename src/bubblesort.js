@@ -11,8 +11,6 @@ var codeArr = [
 ]
 
 
-
-
 function run(){
     let runButton = document.getElementById("run")
 

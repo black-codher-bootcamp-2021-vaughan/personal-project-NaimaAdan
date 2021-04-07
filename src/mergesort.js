@@ -141,7 +141,7 @@ function merge(sortedArray, arr1, arr2) {
 
     return sortedArray;
 }
-
+// this function 
 function setArrayCanvasPosition(arr, level, column) {
     var maxNumArraysInRow = Math.pow(2, level - 1);
 

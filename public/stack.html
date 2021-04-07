@@ -30,7 +30,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">visualiser</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" >
+      <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarResponsive" >
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -46,15 +46,17 @@
               <li><a class="dropdown-item" href="stack.html">stack</a></li>
               <li><a class="dropdown-item" href="queue.html">queue</a></li>
               <li><a class="dropdown-item" href="array.html">array</a></li>
+              <li><a class="dropdown-item" href="binarytree.html">binary tree</a></li>
+
             </ul>
          <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             sorting algorithms
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="bubblesort.html">bubble sort</a></li>
+                  <li><a class="dropdown-item" href="insertionsort.html">insertion sort</a></li>
+                  <li><a class="dropdown-item" href="mergesort.html">merge sort</a></li>
                 </ul>
             <li class="nav-item">
                 <a class="nav-link" href="#">about</a>
@@ -76,93 +78,7 @@
     <script src="../lib/jquery.transit.js"></script>
     <script src="../lib/raphael.js"></script>
     <script src="../build/JSAV.js"></script>
-    <script>
-
-
-        function addToArray(jsav, jsavArray, value) {
-            var newArr = jsavArray._values
-            newArr.push(value)
-  
-            jsavArray.hide()
-            return jsav.ds.array(newArr) 
-        
-        }
-        function poppedArray(jsav, jsavArray, value) {
-            var newArr = jsavArray._values
-            newArr.pop(value)
-           
-            jsavArray.hide()
-            return jsav.ds.array(newArr)
-
-        }
-    
-
-        function run() {
-
-            var jsav = new JSAV("container");
-            var myArr = []
-            let headPointer;
-            let tailPointer;
-            jsavArr = jsav.ds.array(myArr);
-            var pushElement = document.getElementById("push");
-            pushElement.addEventListener("click", function() {
-                var input = document.getElementById("userInput")
-                var valueToAdd = input.value
-                jsavArr = addToArray(jsav, jsavArr, valueToAdd)
-                if (headPointer) {
-                  headPointer.hide()
-                }
-                if (tailPointer) {
-                  tailPointer.hide()
-                }
-                tailPointer = jsav.pointer("Tail", jsavArr.index(jsavArr.size() - 1), {arrowAnchor: "left top"})
-                headPointer = jsav.pointer("Head", jsavArr.index(0), {arrowAnchor: "left top"})
-              })
-
-              var newArr = []
-              jsavArr = jsav.ds.array(newArr);
-              var popElement = document.getElementById("pop");
-              popElement.addEventListener("click", function() {
-                  var input = document.getElementById("userInput")
-                  var valueToRemove = input.value
-                  jsavArr = poppedArray(jsav, jsavArr, valueToRemove) 
-                  if (headPointer) {
-                    headPointer.hide()
-                  }
-                  if (tailPointer) {
-                    tailPointer.hide()
-                  }
-                  tailPointer = jsav.pointer("Tail", jsavArr.index(jsavArr.size() - 1), {arrowAnchor: "left top"})
-                  headPointer = jsav.pointer("Head", jsavArr.index(0), {arrowAnchor: "left top"})
-              })
-      }
-
-      // function for the pointer to label the front of the stack 
-      // function to label the back of the stack 
-      
-
-
-
-
-
-
-
-
-
-        run()
-
-
-
-
-
-
-
-
-
-
-
-    </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
+    <script src="../src/stack.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>
