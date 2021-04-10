@@ -1,3 +1,4 @@
+
 var codeArr = [
     "function insertionSort() {",
     "   for (let sortedIndex = 0; i < sortedIndex.size() - 1; i++) {",
@@ -52,10 +53,10 @@ var unsetProcessing = function(arr, index) {
 };
 
 
-
+// function for insertion sort 
 function runInsertionSort(theArray) {
     var jsav = new JSAV("container");
-    var arr = jsav.ds.array(theArray, {layout: "bar"});
+    var arr = jsav.ds.array(theArray);
     var code = jsav.code(codeArr)
     code.setCurrentLine(1)
     jsav.umsg("Starting insertion sort");
@@ -75,25 +76,33 @@ function runInsertionSort(theArray) {
             jsav.umsg("Comparing to the value to the left");
             code.setCurrentLine(4)
             jsav.step();
-            if (arr.value(indexToCompare) < arr.value(indexToCompare - 1)) {
+            for ( j= indexToCompare; arr.value(j) < arr.value(j -1) ;j--) {
                 jsav.umsg("Swap");
                 code.setCurrentLine(5)
-                arr.highlight(indexToCompare)
-                arr.unhighlight(indexToCompare - 1)
-                unsetProcessing(arr, indexToCompare)
-                setProcessing(arr, indexToCompare - 1)
-                arr.swap(indexToCompare, indexToCompare - 1)
+                arr.highlight(j)
+                arr.unhighlight(j - 1)
+                unsetProcessing(arr, j)
+                setProcessing(arr, j - 1)
+                arr.swap(j, j - 1)
                 jsav.step();
             }
+          
+         
+            
         }
+        // arr.highlight(indexToCompare -1)
         arr.highlight(indexToCompare)
-        unsetProcessing(arr, indexToCompare)
+        unsetProcessing(arr, (indexToCompare))
+
+
     }
     jsav.umsg("Finished");
     code.setCurrentLine(8)
     jsav.recorded();
+   
+
+    
 }
     
-// this executed the "run" button
 run()
 reset()

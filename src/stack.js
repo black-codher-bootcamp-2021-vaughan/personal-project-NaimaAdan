@@ -11,7 +11,7 @@ function poppedArray(jsav, jsavArray, value) {
     newArr.pop(value)
    
     jsavArray.hide()
-    return jsav.ds.array(newArr)
+    return jsav.ds.array(newArr,)
 
 }
 
