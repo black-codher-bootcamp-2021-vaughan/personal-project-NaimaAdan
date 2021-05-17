@@ -1,4 +1,3 @@
-
 var codeArr = [
     "function insertionSort() {",
     "   for (let sortedIndex = 0; i < sortedIndex.size() - 1; i++) {",
@@ -29,7 +28,7 @@ function run(){
         let formattedString = str.split("").filter(e => e != " ").join("")        
         let arr = formattedString.split(",");
 
-        runInsertionSort(arr);
+        runInsertionSort([3,2,1]);
         document.getElementById("run").disabled = true;
 
     })
@@ -76,7 +75,7 @@ function runInsertionSort(theArray) {
             jsav.umsg("Comparing to the value to the left");
             code.setCurrentLine(4)
             jsav.step();
-            for ( j= indexToCompare; arr.value(j) < arr.value(j -1) ;j--) {
+            for ( j= indexToCompare; j>0&&arr.value(j) < arr.value(j -1) ;j--) {
                 jsav.umsg("Swap");
                 code.setCurrentLine(5)
                 arr.highlight(j)
@@ -91,12 +90,15 @@ function runInsertionSort(theArray) {
             
         }
         // arr.highlight(indexToCompare -1)
-        arr.highlight(indexToCompare)
+        // arr.highlight(indexToCompare)
         unsetProcessing(arr, (indexToCompare))
+        // arr.unhighlight(indexToCompare)
+
 
 
     }
     jsav.umsg("Finished");
+    arr.highlight(arr)
     code.setCurrentLine(8)
     jsav.recorded();
    
