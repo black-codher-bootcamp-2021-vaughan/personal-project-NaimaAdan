@@ -13,19 +13,25 @@
   -ms-user-select: none;
   user-select: none;
 }
-#insert {
-    background-color: #e7e7e7;
-    color: black;
-}
+
 
 .jsavcanvas {
     padding:25px;
-    border: 1px solid black;
+    border: groove;
     position: relative;
     background-color: inherit;
     overflow-x: auto;
 }
-
+.input-group {
+    padding-right:5rem; /*adjust as needed*/
+}
+.divider {
+  padding-left:0.5rem;
+}
+.health{
+    padding-left:0.8rem;
+    padding-bottom:0.8rem;
+}
 .jsavnode {
   width: 45px;
   height: 45px;
