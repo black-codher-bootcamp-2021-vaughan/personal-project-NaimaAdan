@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -67,9 +69,20 @@
   <div id="container">
     <p class="jsavoutput jsavline"></p>
     <div class="jsavcanvas">
-    <input id="userInput"></input>
-    <button id="enqueue"> enqueue </button>
-    <button id="dequeue"> dequeue  </button>
+        <!--input section-->
+        <div class="input-group input-group-sm  w-50">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Input</span>
+            </div>
+            <input id="userInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            <div class="divider" />
+            <div>
+
+                <button id="enqueue" type="button" class="btn btn-success"> enqueue </button>
+                <button id="dequeue" type="button" class="btn btn-warning"> dequeue  </button>
+            </div>
+
+        </div>
     </div>
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
