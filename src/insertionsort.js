@@ -28,7 +28,7 @@ function run(){
         let formattedString = str.split("").filter(e => e != " ").join("")        
         let arr = formattedString.split(",");
 
-        runInsertionSort([3,2,1]);
+        runInsertionSort(arr);
         document.getElementById("run").disabled = true;
 
     })
@@ -52,10 +52,10 @@ var unsetProcessing = function(arr, index) {
 };
 
 
-// function for insertion sort 
+
 function runInsertionSort(theArray) {
     var jsav = new JSAV("container");
-    var arr = jsav.ds.array(theArray);
+    var arr = jsav.ds.array(theArray, {layout: "bar"});
     var code = jsav.code(codeArr)
     code.setCurrentLine(1)
     jsav.umsg("Starting insertion sort");
@@ -68,43 +68,32 @@ function runInsertionSort(theArray) {
         code.setCurrentLine(3)
         jsav.step();
         let indexToCompare;
-        for (indexToCompare = sortedIndex + 1; indexToCompare > 0 && arr.value(indexToCompare) < arr.value(sortedIndex); indexToCompare--) {
+        for (indexToCompare = sortedIndex + 1; indexToCompare > 0 && arr.value(indexToCompare) < arr.value(indexToCompare - 1); indexToCompare--) {
             jsav.umsg("Processing index " + indexToCompare + " in blue");
             setProcessing(arr, indexToCompare)
             jsav.step();
             jsav.umsg("Comparing to the value to the left");
             code.setCurrentLine(4)
             jsav.step();
-            for ( j= indexToCompare; j>0&&arr.value(j) < arr.value(j -1) ;j--) {
+            if (arr.value(indexToCompare) < arr.value(indexToCompare - 1)) {
                 jsav.umsg("Swap");
                 code.setCurrentLine(5)
-                arr.highlight(j)
-                arr.unhighlight(j - 1)
-                unsetProcessing(arr, j)
-                setProcessing(arr, j - 1)
-                arr.swap(j, j - 1)
+                arr.highlight(indexToCompare)
+                arr.unhighlight(indexToCompare - 1)
+                unsetProcessing(arr, indexToCompare)
+                setProcessing(arr, indexToCompare - 1)
+                arr.swap(indexToCompare, indexToCompare - 1)
                 jsav.step();
             }
-          
-         
-            
         }
-        // arr.highlight(indexToCompare -1)
-        // arr.highlight(indexToCompare)
-        unsetProcessing(arr, (indexToCompare))
-        // arr.unhighlight(indexToCompare)
-
-
-
+        arr.highlight(indexToCompare)
+        unsetProcessing(arr, indexToCompare)
     }
     jsav.umsg("Finished");
-    arr.highlight(arr)
     code.setCurrentLine(8)
     jsav.recorded();
-   
-
-    
 }
     
+// this executed the "run" button
 run()
 reset()
