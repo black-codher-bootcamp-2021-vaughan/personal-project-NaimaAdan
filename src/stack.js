@@ -20,7 +20,6 @@ function run() {
 
     var jsav = new JSAV("container");
     var myArr = []
-    // let headPointer;
     let topPointer;
     jsavArr = jsav.ds.array(myArr);
     var pushElement = document.getElementById("push");
@@ -28,14 +27,11 @@ function run() {
         var input = document.getElementById("userInput")
         var valueToAdd = input.value
         jsavArr = addToArray(jsav, jsavArr, valueToAdd)
-        // if (headPointer) {
-        //   headPointer.hide()
-        // }
+      
         if (topPointer) {
           topPointer.hide()
         }
         topPointer = jsav.pointer("Top", jsavArr.index(jsavArr.size() - 1), {arrowAnchor: "left top"})
-        // headPointer = jsav.pointer("Head", jsavArr.index(0), {arrowAnchor: "left top"})
       })
 
       var newArr = []
@@ -45,14 +41,11 @@ function run() {
           var input = document.getElementById("userInput")
           var valueToRemove = input.value
           jsavArr = poppedArray(jsav, jsavArr, valueToRemove) 
-          // if (headPointer) {
-          //   headPointer.hide()
-          // }
+         
           if (topPointer) {
             topPointer.hide()
           }
           topPointer = jsav.pointer("Top", jsavArr.index(jsavArr.size() - 1), {arrowAnchor: "left top"})
-          // headPointer = jsav.pointer("Head", jsavArr.index(0), {arrowAnchor: "left top"})
       })
 }
 run()
