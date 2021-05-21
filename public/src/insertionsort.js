@@ -1,4 +1,6 @@
-var codeArr = [
+let runButton = document.getElementById("run")
+let resetButton = document.getElementById("reset")
+let codeArr = [
     "function insertionSort() {",
     "   for (let sortedIndex = 0; i < sortedIndex.size() - 1; i++) {",
     "       for (let indexToCompare = sortedIndex + 1; indexToCompare > 0 && arr[indexToCompare] < arr[sortedIndex]; j--) {",
@@ -10,47 +12,36 @@ var codeArr = [
     "}"
 ]
 
+runButton.addEventListener("click", function() {
+    let input = document.getElementById("userInput")
+    let str = input.value;
+    // if no commas and spaces are present
+    if (str.indexOf(",") == -1 && str.indexOf(" ") != -1) {
+        alert("User specified input should contain commas instead of spaces: " + str)
+        return;
+    }
+
+    let formattedString = str.split("").filter(e => e != " ").join("")        
+    let arr = formattedString.split(",");
+
+    runInsertionSort(arr);
+    document.getElementById("run").disabled = true;
+})
+
+resetButton.addEventListener("click", function () {
+    location.reload();
+})
 
 
 
-function run(){
-    let runButton = document.getElementById("run")
 
-    runButton.addEventListener("click", function() {
-        let input = document.getElementById("userInput")
-        let str = input.value;
-        // if no commas and spaces are present
-        if (str.indexOf(",") == -1 && str.indexOf(" ") != -1) {
-            alert("User specified input should contain commas instead of spaces: " + str)
-            return;
-        }
-
-        let formattedString = str.split("").filter(e => e != " ").join("")        
-        let arr = formattedString.split(",");
-
-        runInsertionSort(arr);
-        document.getElementById("run").disabled = true;
-
-    })
-}
-
-// funtion for the reset button 
-function reset() {
-    let resetButton = document.getElementById("reset")
-    resetButton.addEventListener("click", function () {
-      location.reload();
-   })
-}
-
-
-
-var setProcessing = function(arr, index) {
+function setProcessing(arr, index) {
     arr.addClass(index, "processing");
-  };
-var unsetProcessing = function(arr, index) {
-    arr.removeClass(index, "processing");
 };
 
+function unsetProcessing(arr, index) {
+    arr.removeClass(index, "processing");
+};
 
 
 function runInsertionSort(theArray) {
@@ -93,7 +84,3 @@ function runInsertionSort(theArray) {
     code.setCurrentLine(8)
     jsav.recorded();
 }
-    
-// this executed the "run" button
-run()
-reset()
