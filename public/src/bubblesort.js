@@ -16,7 +16,6 @@
         "}"
     ]
 
-
     function setupListeners() {
         var runButton = document.getElementById("run")
         var resetButton = document.getElementById("reset")
@@ -32,7 +31,7 @@
                 return;
             }
             var formattedString = str.split("").filter(function(e) { return e != " "}).join("")
-            var arr = formattedString.split(",");
+            var arr = formattedString.split(",").map(function(e) { return parseInt(e)});
             var jsav = new JSAV("container");
             var jsavArr = jsav.ds.array(arr, {layout: "bar"});
     
@@ -56,7 +55,7 @@
             jsav.umsg("Starting pass " + parseInt(numTimes + 1));
             jsav.step();
             code.setCurrentLine(3)
-            jsav.umsg("For every element do some stuff");
+            jsav.umsg("For every element compare and swap");
             jsav.step();
             for (var swapIndex = 0; swapIndex < jsavArr.size() - 1; swapIndex++) {
                 jsav.umsg("Compare elements");
