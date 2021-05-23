@@ -3,8 +3,6 @@
     "use strict";
     if (typeof JSAV === "undefined") { return; }
 
-    var runButton = document.getElementById("run")
-    var resetButton = document.getElementById("reset")
     var codeArr = [
         "function insertionSort() {",
         "   for (var sortedIndex = 0; i < sortedIndex.size() - 1; i++) {",
@@ -19,6 +17,9 @@
 
 
     function setupListeners() {
+        var runButton = document.getElementById("run")
+        var resetButton = document.getElementById("reset")
+
         if (!runButton || !resetButton) {
             return;
         }
@@ -32,7 +33,7 @@
             }
     
             var formattedString = str.split("").filter(function(e) { return e != " "}).join("")        
-            var arr = formattedString.split(",");
+            var arr = formattedString.split(",").map(function(e) { return parseInt(e)});
             var jsav = new JSAV("container");
             var jsavArr = jsav.ds.array(arr, {layout: "bar"});
     

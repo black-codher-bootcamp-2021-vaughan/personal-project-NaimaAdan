@@ -3,14 +3,14 @@
   "use strict";
   if (typeof JSAV === "undefined") { return; }
 
-  var runButton = document.getElementById("run")
-  var resetButton = document.getElementById("reset")
-  var jsav;
   var canvasWidth;
   var rowHeight = 80;
   var blockWidth = 47;
 
   function setupListeners() {
+    var runButton = document.getElementById("run")
+    var resetButton = document.getElementById("reset")
+
     if (!runButton || !resetButton) {
         canvasWidth = 0
         return;
@@ -27,10 +27,10 @@
       var formattedString = str.split("").filter(function(e) { return e != " "}).join("")        
       var arr = formattedString.split(",").map(function(e) { return parseInt(e)});
 
-      jsav = new JSAV("container");
+      var jsav = new JSAV("container");
 
       jsav.umsg("Selecting the whole array");
-      // creat an array based off input value and in potion 1 1 
+      // create an array based off input value and in position 1 1 
       runMergeSort(jsav, createArray(jsav, arr, {indexed: true}));
 
       jsav.umsg("Finished sorting!");
