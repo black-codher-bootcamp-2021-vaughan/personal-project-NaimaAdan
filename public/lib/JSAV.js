@@ -1,6 +1,6 @@
 /*!
  * JSAV - JavaScript Algorithm Visualization Library
- * Version v1.0.1-33-g556853c
+ * Version 
  * Copyright (c) 2011-2015 by Ville Karavirta and Cliff Shaffer
  * Released under the MIT license.
  */
@@ -8529,7 +8529,7 @@ if (typeof Raphael !== "undefined") { // only execute if Raphael is loaded
 */
 (function() {
   if (typeof JSAV === "undefined") { return; }
-  var theVERSION = "v1.0.1-33-g556853c";
+  var theVERSION = "";
 
   JSAV.version = function() {
     return theVERSION;
