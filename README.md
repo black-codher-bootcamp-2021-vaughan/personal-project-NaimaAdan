@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Black Codher Personal Project
 
 🎉 **Welcome to your Black Codher Personal Project** 🎉
@@ -105,7 +104,6 @@ If all's well with the above steps, you should see a list of familiar names. If 
 ## What's Next?!
 
 Now it's time to start building your project.
-=======
 #JSAV [![Travis CI Build Status](https://travis-ci.org/vkaravir/JSAV.svg?branch=master)](https://travis-ci.org/vkaravir/JSAV)
 This is the JSAV development library for creating Algorithm
 Visualizations in JavaScript.
@@ -152,4 +150,3 @@ For SVN users new to git:
 
 * To "checkout" a new copy of the library, use "git clone".
 * To "update" your copy of the repository, use "git pull".
->>>>>>> 8be5d2c... save changes
